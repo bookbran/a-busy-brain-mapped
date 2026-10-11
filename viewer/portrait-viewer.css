@@ -1,0 +1,913 @@
+/* A world you can share: the viewer page (item 1.7). The smallest sheet that
+   gives the world the whole window and sets its title and byline. Every
+   colour, size and radius comes from tokens.css; the page is dark-themed by
+   its <html data-theme="dark">, like the landing page. The faces are the
+   tokens' system fallbacks: a published world loads no font from anywhere. */
+
+/* The dashboard zooms its own interface (tokens.css, `html { zoom:
+   var(--ui-zoom) }`, 1.15). A public world is laid out in the sizes it names,
+   so its 35% sheet is 35% and its 380px panel is 380px (found in 3.2). */
+:root {
+  --ui-zoom: 1;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  /* a drag at the edge must not pull the page or reload it on a phone */
+  overscroll-behavior: none;
+}
+
+body {
+  background-image: var(--sky), var(--ground);
+  background-color: var(--paper);
+  background-repeat: no-repeat;
+  color: var(--ink);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.world-head {
+  /* a long unbroken word wraps rather than running off the page (3.6) */
+  overflow-wrap: anywhere;
+  position: fixed;
+  top: var(--space-5);
+  left: var(--space-5);
+  /* the title column stops 72px short of the right edge on a phone: that
+     corner is the invitation back's mark (3.4, brief 3.1 section 1), set in
+     from the edge since 4.11c (Dan: "a little more spacing from its right
+     border") */
+  right: 72px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.world-title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: var(--text-hero);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.world-byline {
+  margin: var(--space-1) 0 0;
+  /* muted grey on the night sky reads smaller than it is (brief 3.1 section 5) */
+  font-size: var(--text-lg);
+  color: var(--ink-2);
+}
+
+.world-byline:empty {
+  display: none;
+}
+
+#world {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* the world takes every finger: drag, pinch and tap are its, never the page's */
+  touch-action: none;
+}
+
+/* With scripts off (PRD 5.5), the tall card stands in for the world. The
+   build fills its file name and its alt (the approved title). */
+.world-still {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* and when the world cannot mount (2.3): the viewer adds the same still */
+.world-fallen #world {
+  display: none;
+}
+/* Visually hidden, still read aloud: the text version while the world works,
+   the tour's live caption always, and the page's title once a still that
+   carries its own is showing (one title on screen, never two). */
+.world-text,
+.world-caption,
+.still-shown .world-head,
+body:has(> noscript > .world-still) .world-head {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* WHEN THE WORLD CANNOT BE DRAWN (3.3, PRD 5.5 and 5.7): the world fell, or
+   scripts are off. The page scrolls: the still at the top at its natural
+   height, then the text version of the world, the byline and every place
+   with its passage. With no still, the title stands above the text. */
+html:has(> body.world-fallen),
+html:has(> body > noscript > .world-still),
+.world-fallen,
+body:has(> noscript > .world-still) {
+  height: auto;
+  overflow: auto;
+}
+.world-fallen .world-head {
+  position: static;
+  padding: var(--space-5) var(--space-5) 0;
+}
+.world-fallen .world-still,
+body:has(> noscript > .world-still) .world-still {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.world-fallen .world-text,
+body:has(> noscript > .world-still) .world-text {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: var(--space-5);
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+}
+
+/* the text version's places: a name to press, then its passage */
+.world-text-byline {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-lg);
+  color: var(--ink-2);
+}
+.world-text-byline:empty {
+  display: none;
+}
+.world-text-places {
+  /* a long unbroken word wraps rather than running off the page (3.6) */
+  overflow-wrap: anywhere;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.world-text-places li {
+  margin: 0 0 var(--space-5);
+}
+.world-text-places button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.world-text-places p {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--ink);
+  white-space: pre-line;
+}
+/* with no world to turn to, a place's name is only its name */
+.world-fallen .world-text-places button,
+body:has(> noscript > .world-still) .world-text-places button {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* focus is always visible, and drawn the same way everywhere on the page */
+.tour-ctl:focus-visible,
+.world-text-places button:focus-visible,
+#world:focus-visible {
+  outline: var(--ring) solid var(--ink-2);
+  outline-offset: 3px;
+}
+
+/* THE PLACE CARD (3.2, brief 3.1 section 2). A tint wash of the land's own
+   tone at 16% into the night, square, no border and no coloured edge. It
+   rises slowly as the land finishes turning toward the visitor, and leaves at
+   once: arriving is unhurried, leaving gets out of the way. */
+.place-card {
+  /* a long unbroken word wraps rather than running off the page (3.6) */
+  overflow-wrap: anywhere;
+  position: fixed;
+  z-index: 2;
+  box-sizing: border-box;
+  background: color-mix(in srgb, var(--tone) 16%, var(--paper));
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(var(--space-5));
+  transition: opacity .16s linear, transform .16s linear, visibility 0s linear .16s;
+}
+.place-card.open {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: opacity .42s ease-out, transform .42s ease-out, visibility 0s;
+}
+[data-tone="1"] { --tone: var(--land-1); }
+[data-tone="2"] { --tone: var(--land-2); }
+[data-tone="3"] { --tone: var(--land-3); }
+[data-tone="4"] { --tone: var(--land-4); }
+[data-tone="5"] { --tone: var(--land-5); }
+[data-tone="6"] { --tone: var(--land-6); }
+[data-tone="7"] { --tone: var(--land-7); }
+[data-tone="8"] { --tone: var(--land-8); }
+
+.place-name {
+  margin: 0 0 var(--space-2);
+  font-family: var(--display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--tone);
+}
+
+.place-passage {
+  /* a long unbroken word wraps rather than running off the page (3.6) */
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-family: var(--body);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--ink);
+  white-space: pre-line;
+}
+
+.place-passage:empty {
+  display: none;
+}
+
+/* Wide: a 380px panel at bottom left, under the title's column; the ball is
+   round, so that corner is mostly sky. */
+@media (min-width: 720px) {
+  .place-card {
+    left: var(--space-6);
+    bottom: var(--space-6);
+    width: 380px;
+    padding: var(--space-5);
+  }
+}
+
+/* Phone: a bottom sheet at most 35% of the height, its padding inside the
+   safe areas.
+   THE CONTROLS NEVER SCROLL AWAY (4.7c, D6: "getting cut off by my phone's
+   lower 3 icon nav"). The sheet used to scroll as one box, so with a long
+   passage its last row, the way back and the way on, sat below the fold.
+   Now the sheet is a column that never scrolls itself: the passage takes
+   the room left and scrolls inside it, and the count, name, line and
+   controls keep their height, the controls always the last visible row.
+   Its height is measured on the screen the visitor has (svh, the small
+   viewport, without the space behind the browser's bars), vh before it for
+   a browser that does not know svh; `viewport-fit=cover` in the page's head
+   is what lets the safe-area padding see the home indicator. */
+@media (max-width: 719px) {
+  .place-card {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 35vh;
+    max-height: 35svh;
+    overflow: hidden;
+    padding: var(--space-5) calc(var(--space-5) + env(safe-area-inset-right, 0px)) calc(var(--space-5) + env(safe-area-inset-bottom, 0px)) calc(var(--space-5) + env(safe-area-inset-left, 0px));
+  }
+  .place-card > * {
+    flex: none;
+  }
+  .place-card > .place-passage {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+}
+
+/* NOTHING FLASHES ON A TAP (4.7c, D7: "makes the whole screen select
+   flash"). The world, the card and the controls take no tap highlight and
+   no text selection; the text version keeps both, since it is for reading. */
+#world,
+.place-card,
+.tour-row,
+.tour-ctl {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .place-card,
+  .place-card.open {
+    transition: none;
+  }
+}
+
+/* REDUCED MOTION ON THE TOUR (3.3, PRD 5.5): no camera flight. Each move is a
+   0.6s cross-fade: the world fades out over 0.3s, jumps at the midpoint, and
+   fades back in. The renderer itself holds the art still and stops the idle
+   turn under the same preference. */
+@media (prefers-reduced-motion: reduce) {
+  #world {
+    transition: opacity .3s linear;
+  }
+  .rm-fade #world {
+    opacity: 0;
+  }
+}
+
+/* A hidden control is gone, whatever display its own rule gives it. */
+[hidden] {
+  display: none !important;
+}
+
+/* THE TOUR (3.2, brief 3.1 sections 3 and 4). One tour control on screen at
+   a time: Take the tour and Tour again in the row at the bottom, Next and
+   Resume tour in the card's slot. Each is an icon-coin and a plain label,
+   a 48px target, no pill. */
+.tour-ctl {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 48px;
+  margin: 0;
+  padding: 0 var(--space-2);
+  border: 0;
+  background: none;
+  font-family: var(--body);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+}
+.tour-ctl .coin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--tone);
+}
+.tour-ctl svg {
+  display: none;
+  width: 16px;
+  height: 16px;
+  fill: var(--paper);
+}
+.tour-ctl[data-glyph="play"] .glyph-play,
+.tour-ctl[data-glyph="next"] .glyph-next,
+.tour-ctl[data-glyph="again"] .glyph-again,
+.tour-ctl[data-glyph="world"] .glyph-world {
+  display: block;
+}
+/* the card's control is the quiet one: an outlined coin, the label a step down */
+.tour-ctl.quiet {
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.tour-ctl.quiet .coin {
+  background: none;
+  box-shadow: inset 0 0 0 1.5px var(--ink-2);
+}
+.tour-ctl.quiet svg {
+  fill: var(--ink-2);
+}
+
+.tour-row {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--space-6) + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 720px) {
+  .tour-row {
+    left: auto;
+    right: var(--space-6);
+  }
+}
+
+/* THE WAY ON AND THE WAY BACK (4.7b, D5: "there's no continue or arrow
+   proceed button"). The card always offers both while it is up: the quiet
+   way back to the whole world on the left, and the way on on the right,
+   a filled coin carrying an arrow after its word, in full ink. */
+.place-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.place-controls .tour-ctl {
+  padding: 0;
+  font-size: var(--text-md);
+}
+.place-controls .tour-ctl.on {
+  margin-left: auto;
+}
+
+.place-count {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-md);
+  /* --ink-2, not --ink-3: at 13.5px --ink-3 reaches only 3.94 to 4.27 on the
+     land washes, under WCAG AA's 4.5; --ink-2 is 7.5 or better (3.3) */
+  color: var(--ink-2);
+  letter-spacing: .04em;
+}
+
+/* Playing: the passage reveals line by line, the rest dim; paused is a cut to
+   the whole passage, so `whole` carries no transition at all. */
+.place-passage .w {
+  opacity: .16;
+  transition: opacity .3s linear;
+}
+.place-passage .w.on,
+.place-passage.whole .w {
+  opacity: 1;
+}
+.place-passage.whole .w {
+  transition: none;
+}
+
+/* the line under the passage fills across the reveal and the hold */
+.place-line {
+  height: 2px;
+  margin-top: var(--space-4);
+  background: color-mix(in srgb, var(--tone) 22%, transparent);
+}
+.place-line i {
+  display: block;
+  height: 2px;
+  background: var(--tone);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* moving on: the card's words leave before the world flies */
+.place-card.leaving .place-count,
+.place-card.leaving .place-name,
+.place-card.leaving .place-passage {
+  opacity: 0;
+  transition: opacity .25s linear;
+}
+
+/* while a stop is up, the title steps back to 40% (3.1, answer 3) */
+.world-head {
+  transition: opacity .4s ease-out;
+}
+.stop-up .world-head {
+  opacity: .4;
+}
+
+/* the closing line's place, above the row; its words and link are 3.4's */
+.tour-closing {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--space-6) + 64px + env(safe-area-inset-bottom, 0px));
+  margin: 0;
+  text-align: center;
+  font-size: var(--text-base);
+  color: var(--ink-2);
+}
+/* THE INVITATION BACK (3.4, PRD 3.1): the closing line's second sentence
+   and the corner mark are the world's only outbound link, both to the
+   landing page with exactly ?from=a-shared-world. The words and the address
+   are the template's, never the member's. */
+.tour-closing a {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--land-3);
+  text-underline-offset: 4px;
+}
+
+/* THE BRAND, WHERE IT WORKS (4.11, Dan: "where should these things appear
+   ... maximum impact, yet subtle and lets the user's world still be the
+   focus?"). Loud only at the two moments that travel: the end of the tour,
+   and the picture a message carries. Never over a land or a card.
+
+   The symbols the lockup is drawn from, defined once, never drawn as they are. */
+.al-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* The end of the tour: the lockup settles in as the world pulls back, with
+   one line under it. The words "Made with Astrolabe." stay for a screen reader. */
+.tour-closing a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+/* the lockup is one picture, laid out as the landing page and the dashboard
+   draw it: the word beside the globe, from the same dots (4.11b) */
+.close-lockup {
+  display: block;
+  width: 248px;
+  height: 48px;
+  fill: currentColor;
+  color: var(--ink);
+}
+.close-made {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.close-say {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--land-3);
+  text-underline-offset: 4px;
+}
+.tour-closing:not([hidden]) {
+  animation: al-settle .9s ease-out both;
+}
+@keyframes al-settle {
+  from { opacity: 0; transform: translateY(var(--space-3)); }
+  to { opacity: 1; transform: none; }
+}
+
+/* The corner's dots shimmer in once as the world opens, then rest. */
+.world-mark .mark-logo circle {
+  animation: al-dot .7s ease-out both;
+}
+.world-mark .mark-logo circle:nth-child(4n+1) { animation-delay: .15s; }
+.world-mark .mark-logo circle:nth-child(4n+2) { animation-delay: .35s; }
+.world-mark .mark-logo circle:nth-child(4n+3) { animation-delay: .55s; }
+.world-mark .mark-logo circle:nth-child(4n) { animation-delay: .75s; }
+.world-mark .mark-logo .eye { animation-delay: 1s; }
+@keyframes al-dot {
+  from { opacity: 0; }
+  60% { opacity: 1; }
+  to { opacity: .85; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-closing:not([hidden]),
+  .world-mark .mark-logo circle {
+    animation: none;
+  }
+}
+@media (min-width: 720px) {
+  .tour-closing {
+    left: auto;
+    right: var(--space-6);
+    text-align: right;
+  }
+}
+
+/* the mark sits in the corner the title column leaves (72px), a 48px target,
+   16px in from the edge and the phone's own inset */
+.world-mark {
+  position: fixed;
+  z-index: 3;
+  top: calc(var(--space-5) - 8px);
+  right: calc(var(--space-4) + env(safe-area-inset-right, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: var(--ink-2);
+}
+/* THE ASTROLABE MARK (4.10, Dan: "no astrolabe wordmark or logo anywhere";
+   4.11b: "the logo could be larger"). The landing page's own lockup, its
+   dots rounded. On a phone the dot globe alone, 40 px, which reads at that
+   size; on a wide screen the whole lockup, the word beside the globe as the
+   dashboard draws it, and the title column stops short enough to leave it room. */
+.world-mark svg {
+  display: block;
+  fill: currentColor;
+}
+.world-mark .mark-logo {
+  width: 40px;
+  height: 40px;
+}
+.world-mark .mark-lockup {
+  display: none;
+}
+@media (min-width: 720px) {
+  .world-head {
+    right: 230px;
+  }
+  .world-mark {
+    width: auto;
+    padding: 0 var(--space-2);
+  }
+  .world-mark .mark-logo {
+    display: none;
+  }
+  .world-mark .mark-lockup {
+    display: block;
+    width: 186px;
+    height: 36px;
+  }
+}
+.world-mark:focus-visible,
+.tour-closing a:focus-visible {
+  outline: var(--ring) solid var(--ink-2);
+  outline-offset: 3px;
+}
+/* A card is a picture, and the picture is what travels: there the mark is a
+   quiet signature, the lockup in a bottom corner of the text side, in the
+   second ink, small enough that the world stays the picture (4.11). */
+.card-wide .world-mark,
+.card-tall .world-mark {
+  top: auto;
+  right: auto;
+  width: auto;
+  height: auto;
+  padding: 0;
+  color: var(--ink-2);
+}
+.card-wide .world-mark {
+  left: 15vw;
+  bottom: 6vh;
+}
+.card-tall .world-mark {
+  left: 6vw;
+  bottom: 6vw;
+}
+.card-wide .world-mark .mark-logo,
+.card-tall .world-mark .mark-logo {
+  display: none;
+}
+.card-wide .world-mark .mark-lockup,
+.card-tall .world-mark .mark-lockup {
+  display: block;
+}
+.card-wide .world-mark .mark-lockup { width: 15.5vw; height: 3vw; }
+.card-tall .world-mark .mark-lockup { width: 25.8vw; height: 5vw; }
+/* under a still, the card already carries the byline (3.3's leftover) */
+.still-shown .world-text-byline,
+body:has(> noscript > .world-still) .world-text-byline {
+  display: none;
+}
+
+/* A phone band (2.1 brief, item 6): the title above, the world a little above
+   centre, the lower band left empty for the place card (3.2). */
+@media (max-width: 719px) {
+  #world {
+    top: 13vh;
+    height: 60vh;
+  }
+  /* while the card is up the band rises to end at 64% of the height, so the
+     sheet never covers the ball's lower rim */
+  .card-up #world {
+    height: 51vh;
+  }
+}
+
+/* The share cards (2.1 brief, item 2), rendered at exactly their size, so vw is
+   a share of the card's width. The ball is framed by the viewer script. */
+.card-wide .world-head {
+  /* a 180px left gutter (15% of 1200) no text crosses, for apps that crop the left */
+  top: 6vh;
+  left: 15vw;
+  right: auto;
+  width: 28.4vw;
+}
+
+.card-wide .world-title {
+  /* the look approved at 2.1, drawn under the dashboard's 1.15 zoom (5vw then) */
+  font-size: 5.75vw;
+  line-height: 1.08;
+}
+
+.card-wide .world-byline {
+  font-size: 2.6vw;
+}
+
+.card-tall .world-head {
+  /* a 6% inset of the short side */
+  top: 6vw;
+  left: 6vw;
+  right: 6vw;
+}
+
+.card-tall .world-title {
+  /* 7vw under the 1.15 zoom, as approved */
+  font-size: 8vw;
+  line-height: 1.05;
+}
+
+.card-tall .world-byline {
+  font-size: 3.6vw;
+}
+
+.card-wide #world,
+.card-tall #world {
+  top: 0;
+  height: 100%;
+}
+
+/* THE READING WINDOW (4.9c). A shade over the world and a sheet inside the
+   safe areas, never taller than the screen; the body scrolls inside it. The
+   dot wears the place's tone (an insight's dot is ringed in ink). */
+.note-window {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-4) calc(var(--space-4) + env(safe-area-inset-right, 0px)) calc(var(--space-4) + env(safe-area-inset-bottom, 0px)) calc(var(--space-4) + env(safe-area-inset-left, 0px));
+  background: color-mix(in srgb, var(--paper) 55%, transparent);
+  animation: note-in .24s ease-out both;
+}
+@media (min-width: 720px) {
+  .note-window {
+    align-items: center;
+  }
+}
+@keyframes note-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.note-sheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 560px;
+  max-height: 100%;
+  overflow: hidden;
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  background: color-mix(in srgb, var(--tone) 14%, var(--paper));
+  color: var(--ink);
+}
+.note-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: none;
+  /* room for the close button, which is last in the markup (4.12b) so the answer comes first in tab order */
+  min-height: 44px;
+  padding-right: 40px;
+}
+.note-dot {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tone);
+}
+.note-window[data-kind="insight"] .note-dot {
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--ink);
+}
+.note-title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--ink);
+}
+.note-title:focus {
+  outline: none;
+}
+.note-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.note-close svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+.note-close:focus-visible {
+  outline: var(--ring) solid var(--ink-2);
+  outline-offset: 2px;
+}
+.note-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  margin-top: var(--space-3);
+  font-family: var(--body);
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  color: var(--ink);
+}
+.note-body p {
+  margin: 0 0 var(--space-3);
+  white-space: pre-line;
+}
+.note-body ul {
+  margin: 0 0 var(--space-3);
+  padding-left: var(--space-5);
+}
+.note-body strong {
+  font-weight: 700;
+}
+/* 4.12: a contest's dates under its title, its dot in the template's own colour, its hints set apart from the riddle */
+.note-window[data-kind="contest"] .note-dot {
+  background: var(--contest);
+  box-shadow: 0 0 0 1px var(--ink-3);
+}
+.note-when {
+  flex: none;
+  margin: var(--space-2) 0 0;
+  font-family: var(--body);
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+.note-when[hidden] {
+  display: none;
+}
+.note-body .note-hints {
+  margin-top: var(--space-4);
+  color: var(--ink-2);
+}
+/* 4.12b: a contest's answer, checked in the visitor's own browser, under its hints */
+.note-check {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  flex: none;
+  margin-top: var(--space-3);
+}
+.note-check[hidden] {
+  display: none;
+}
+.note-answer {
+  flex: 1 1 12em;
+  min-width: 0;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--ink-3);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: var(--text-lg);
+}
+.note-answer:focus-visible,
+.note-check-go:focus-visible {
+  outline: var(--ring) solid var(--ink-2);
+  outline-offset: 2px;
+}
+.note-check-go {
+  flex: none;
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  border: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--body);
+  font-size: var(--text-lg);
+  cursor: pointer;
+}
+.note-check-go:disabled,
+.note-answer:disabled {
+  opacity: .55;
+  cursor: default;
+}
+.note-check-said {
+  flex: 1 0 100%;
+  margin: 0;
+  min-height: 1.5em;
+  font-family: var(--body);
+  font-size: var(--text-lg);
+  color: var(--ink);
+}
+@media (prefers-reduced-motion: reduce) {
+  .note-window {
+    animation: none;
+  }
+}

@@ -1,0 +1,218 @@
+/* The dashboard's tokens.css with only what a shared world reads, made by dashboard/dev/build-viewer.js. Do not edit; rebuild. */
+@layer tokens, base, components, app;
+:root {
+  --ui-zoom: 1.15;
+}
+html {
+  zoom: var(--ui-zoom);
+}
+@layer tokens {
+  :root {
+    --paper: #f4f0e8;
+    --paper-up: #fbf9f4;
+    --course-anchor: #3f4bb0;
+    --journey-travelled: #34D399;
+    --ink: #20203e;
+    --ink-2: #3d3d5c;
+    --ink-3: #66667f;
+    --land-lab: #dfe4f2;
+    --land-lab-on: #ffffff;
+    --land-cap: #66667f;
+    --land-cap-on: #20203e;
+    --display: Fraunces, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --body: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --data: "JetBrains Mono", Menlo, "SF Mono", ui-monospace, monospace;
+    --text-sm: 0.78125rem;
+    --text-md: 0.84375rem;
+    --text-base: 0.9375rem;
+    --text-lg: 1.0625rem;
+    --text-xl: 1.375rem;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 22px;
+    --space-6: 34px;
+    --ring: 2px;
+    --kind-person: #b69cff;
+    --kind-session: #5ad2e6;
+    --kind-decision: #ff6a5c;
+    --kind-plan: #5fd38a;
+    --kind-craft: #f3efe7;
+    --kind-reference: #f4cf4a;
+    --kind-idea: #a09a90;
+    --coast: rgba(255,255,255,.26);
+    --coast-on: rgba(255,255,255,.82);
+    --coast-fill: rgba(255,255,255,.05);
+    --see-trusted: rgba(255,255,255,.5);
+    --see-public: rgba(255,255,255,.9);
+    --pip: rgba(20,26,50,.92);
+    --landmark: var(--ink);
+    --ground: radial-gradient(1100px 700px at 50% -12%, #fbf9f4 0%, #f4f0e8 42%, #ebe5da 100%);
+    --sky: radial-gradient(820px 660px at 46% 52%, rgba(255,252,245,.7), rgba(255,250,240,.25) 58%, transparent 80%),
+      radial-gradient(46vw 46vw at 62% 92%, rgba(120,96,64,.07), transparent 62%);
+    --globe-core: #3d5184;
+    --globe-mid: #2f406c;
+    --globe-edge: #1a2444;
+    --globe-marble: .45;
+    --globe-vein: rgba(214,180,110,.55);
+    --globe-shadow: rgba(48,36,24,.38);
+    --globe-rings: rgba(32,32,62,.22);
+    --globe-rim: rgba(200,210,240,.4);
+    --globe-limb: rgba(255,250,240,.9);
+    --globe-limb-warm: rgba(238,224,200,.85);
+    --globe-limb-deep: rgba(30,40,70,.5);
+    --land-on-paper: brightness(.72) saturate(1.05);
+    --land-1: #7cc4f5;
+    --land-2: #ff8a78;
+    --land-3: #4fd6bf;
+    --land-4: #b7a4ff;
+    --land-5: #f0c75a;
+    --land-6: #ec8fd0;
+    --land-7: #8fd46a;
+    --land-8: #d9cbb5;
+    --contest: #f2f6ff;
+    --land-dot-rest: 1;
+    --land-dot-mix: 72%;
+    --land-ring-w: 2.5px;
+    --land-on-blur: 0px;
+    --land-on-ring: 2px;
+    --land-on-mix: 62%;
+    --node-bloom: 0;
+    --coast-glow: 0;
+    --node-stroke-w: .9;
+    --node-stroke: rgba(245,240,230,.75);
+    --text-hero: 2.125rem;
+  }
+  @media (max-width: 719px), (orientation: landscape) and (max-height: 500px) and (pointer: coarse) {
+    :root {
+      --text-hero: 1.625rem;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --kind-person: #9d7bff;
+      --kind-session: #5BC8F5;
+      --kind-decision: #E86A6A;
+      --kind-plan: #34D399;
+      --kind-craft: #F472B6;
+      --kind-reference: #F0E442;
+      --kind-idea: #7A8888;
+      --coast: rgba(233,236,255,.26);
+      --coast-on: rgba(233,236,255,.62);
+      --coast-fill: rgba(233,236,255,.06);
+      --see-trusted: rgba(233,236,255,.40);
+      --see-public: rgba(233,236,255,.86);
+      --pip: rgba(255,255,255,.92);
+      --landmark: var(--pip);
+      --globe-core: rgba(43,43,98,.55);
+      --globe-mid: rgba(23,23,66,.5);
+      --globe-edge: rgba(10,10,36,.55);
+      --globe-marble: 0;
+      --globe-shadow: ;
+      --globe-rings: ;
+      --globe-rim: rgba(150,175,255,.22);
+      --globe-limb: rgba(168,190,255,.36);
+      --globe-limb-warm: rgba(184,142,216,.36);
+      --globe-limb-deep: rgba(96,140,224,.36);
+      --ground: radial-gradient(1100px 700px at 50% -12%, #20204e 0%, #16163f 40%, #0a0a1f 100%);
+      --sky: radial-gradient(40vw 40vw at 20% 26%, rgba(45,163,203,.16), transparent 60%),
+        radial-gradient(44vw 44vw at 82% 20%, rgba(241,90,36,.13), transparent 60%),
+        radial-gradient(46vw 46vw at 62% 92%, rgba(16,185,129,.10), transparent 62%);
+      --ground: radial-gradient(1100px 700px at 50% -12%, #20204e 0%, #16163f 40%, #0a0a1f 100%);
+      --sky: radial-gradient(40vw 40vw at 20% 26%, rgba(45,163,203,.16), transparent 60%),
+      radial-gradient(44vw 44vw at 82% 20%, rgba(241,90,36,.13), transparent 60%),
+      radial-gradient(46vw 46vw at 62% 92%, rgba(16,185,129,.10), transparent 62%);
+      --paper: #16163f;
+      --paper-up: #242453;
+      --course-anchor: #8fa6ff;
+      --journey-travelled: #34D399;
+      --ink: #eef0ff;
+      --ink-2: #c9cde8;
+      --ink-3: #8f93b8;
+      --land-lab: #8f93b8;
+      --land-lab-on: #eef0ff;
+      --land-cap: initial;
+      --land-cap-on: initial;
+      --land-1: #7db8ff;
+      --land-2: #ffb46b;
+      --land-3: #7fe0c0;
+      --land-4: #d79cff;
+      --land-5: #ffd66b;
+      --land-6: #ff9aa8;
+      --land-7: #8fd3ff;
+      --land-8: #b8e08a;
+      --land-on-paper: none;
+      --node-bloom: 0;
+      --coast-glow: 1;
+      --node-stroke-w: 0;
+      --node-stroke: transparent;
+      --land-dot-rest: .75;
+      --land-dot-mix: 100%;
+      --land-ring-w: 0px;
+      --land-on-blur: 7px;
+      --land-on-ring: 0px;
+      --land-on-mix: 100%;
+    }
+  }
+  :root[data-theme="dark"] {
+    --kind-person: #9d7bff;
+    --kind-session: #5BC8F5;
+    --kind-decision: #E86A6A;
+    --kind-plan: #34D399;
+    --kind-craft: #F472B6;
+    --kind-reference: #F0E442;
+    --kind-idea: #7A8888;
+    --coast: rgba(233,236,255,.26);
+    --coast-on: rgba(233,236,255,.62);
+    --coast-fill: rgba(233,236,255,.06);
+    --see-trusted: rgba(233,236,255,.40);
+    --see-public: rgba(233,236,255,.86);
+    --pip: rgba(255,255,255,.92);
+    --landmark: var(--pip);
+    --globe-core: rgba(43,43,98,.55);
+    --globe-mid: rgba(23,23,66,.5);
+    --globe-edge: rgba(10,10,36,.55);
+    --globe-marble: 0;
+    --globe-shadow: ;
+    --globe-rings: ;
+    --globe-rim: rgba(150,175,255,.22);
+    --globe-limb: rgba(168,190,255,.36);
+    --globe-limb-warm: rgba(184,142,216,.36);
+    --globe-limb-deep: rgba(96,140,224,.36);
+    --ground: radial-gradient(1100px 700px at 50% -12%, #20204e 0%, #16163f 40%, #0a0a1f 100%);
+    --sky: radial-gradient(40vw 40vw at 20% 26%, rgba(45,163,203,.16), transparent 60%),
+      radial-gradient(44vw 44vw at 82% 20%, rgba(241,90,36,.13), transparent 60%),
+      radial-gradient(46vw 46vw at 62% 92%, rgba(16,185,129,.10), transparent 62%);
+    --paper: #16163f;
+    --paper-up: #242453;
+    --course-anchor: #8fa6ff;
+    --journey-travelled: #34D399;
+    --ink: #eef0ff;
+    --ink-2: #c9cde8;
+    --ink-3: #8f93b8;
+    --land-lab: #8f93b8;
+    --land-lab-on: #eef0ff;
+    --land-cap: initial;
+    --land-cap-on: initial;
+    --land-1: #7db8ff;
+    --land-2: #ffb46b;
+    --land-3: #7fe0c0;
+    --land-4: #d79cff;
+    --land-5: #ffd66b;
+    --land-6: #ff9aa8;
+    --land-7: #8fd3ff;
+    --land-8: #b8e08a;
+    --land-on-paper: none;
+    --node-bloom: 0;
+    --coast-glow: 1;
+    --node-stroke-w: 0;
+    --node-stroke: transparent;
+    --land-dot-rest: .75;
+    --land-dot-mix: 100%;
+    --land-ring-w: 0px;
+    --land-on-blur: 7px;
+    --land-on-ring: 0px;
+    --land-on-mix: 100%;
+  }
+}

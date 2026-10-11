@@ -1,0 +1,1653 @@
+{
+  "schema": "astrolabe-portrait/1",
+  "title": "A Busy Brain, Mapped",
+  "byline": "a world by Dan",
+  "palette": "astrolabe-1",
+  "seed": "5a757b5223d6ebfe47f9297d33b10f8f",
+  "places": [
+    {
+      "key": "p1",
+      "name": "A Portland Career",
+      "passage": "A Portland Career helps people find work that fits and thrive wherever they are in their career journey. Our coaches walk alongside them through self-insight, discovery, guided mapping, well-researched plans and the job search itself.",
+      "art": {
+        "seed": 131,
+        "span": 0.9,
+        "hue": 285,
+        "depth": "shallow",
+        "view": "elevation",
+        "motion": {
+          "kind": "breathe",
+          "tempo": "steady",
+          "amplitude": 0.06
+        },
+        "strokes": [
+          {
+            "smooth": true,
+            "section": "tube",
+            "importance": "primary",
+            "moves": "still",
+            "points": [
+              [
+                -4.2,
+                -0.04,
+                0
+              ],
+              [
+                -2.1,
+                0.05,
+                0
+              ],
+              [
+                0,
+                0.1,
+                0
+              ],
+              [
+                2.1,
+                0.05,
+                0
+              ],
+              [
+                4.2,
+                -0.04,
+                0
+              ]
+            ],
+            "girth": 0.015
+          },
+          {
+            "section": "tube",
+            "importance": "primary",
+            "moves": "still",
+            "points": [
+              [
+                -1.9,
+                -0.85,
+                0
+              ],
+              [
+                -1.9,
+                0.05,
+                0
+              ],
+              [
+                -1.89,
+                1.1,
+                0
+              ],
+              [
+                -1.88,
+                2.15,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.024
+              },
+              {
+                "at": 0.35,
+                "r": 0.018
+              },
+              {
+                "at": 1,
+                "r": 0.004
+              }
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "primary",
+            "moves": "still",
+            "points": [
+              [
+                1.9,
+                -0.85,
+                0
+              ],
+              [
+                1.9,
+                0.05,
+                0
+              ],
+              [
+                1.89,
+                1.1,
+                0
+              ],
+              [
+                1.88,
+                2.15,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.024
+              },
+              {
+                "at": 0.35,
+                "r": 0.018
+              },
+              {
+                "at": 1,
+                "r": 0.004
+              }
+            ]
+          },
+          {
+            "section": "thread",
+            "importance": "secondary",
+            "hue": 222,
+            "points": [
+              [
+                -1.88,
+                1.9,
+                0
+              ],
+              [
+                -3.75,
+                -0.08,
+                0
+              ],
+              [
+                -1.88,
+                1.75,
+                0
+              ],
+              [
+                -3.3,
+                -0.04,
+                0
+              ],
+              [
+                -1.89,
+                1.6,
+                0
+              ],
+              [
+                -2.85,
+                0,
+                0
+              ],
+              [
+                -1.89,
+                1.45,
+                0
+              ],
+              [
+                -2.4,
+                0.02,
+                0
+              ],
+              [
+                -1.89,
+                1.45,
+                0
+              ],
+              [
+                -1.4,
+                0.05,
+                0
+              ],
+              [
+                -1.89,
+                1.6,
+                0
+              ],
+              [
+                -0.95,
+                0.07,
+                0
+              ],
+              [
+                -1.88,
+                1.75,
+                0
+              ],
+              [
+                -0.5,
+                0.09,
+                0
+              ],
+              [
+                -1.88,
+                1.9,
+                0
+              ],
+              [
+                -0.08,
+                0.1,
+                0
+              ]
+            ]
+          },
+          {
+            "section": "thread",
+            "importance": "secondary",
+            "hue": 222,
+            "points": [
+              [
+                1.88,
+                1.9,
+                0
+              ],
+              [
+                3.75,
+                -0.08,
+                0
+              ],
+              [
+                1.88,
+                1.75,
+                0
+              ],
+              [
+                3.3,
+                -0.04,
+                0
+              ],
+              [
+                1.89,
+                1.6,
+                0
+              ],
+              [
+                2.85,
+                0,
+                0
+              ],
+              [
+                1.89,
+                1.45,
+                0
+              ],
+              [
+                2.4,
+                0.02,
+                0
+              ],
+              [
+                1.89,
+                1.45,
+                0
+              ],
+              [
+                1.4,
+                0.05,
+                0
+              ],
+              [
+                1.89,
+                1.6,
+                0
+              ],
+              [
+                0.95,
+                0.07,
+                0
+              ],
+              [
+                1.88,
+                1.75,
+                0
+              ],
+              [
+                0.5,
+                0.09,
+                0
+              ],
+              [
+                1.88,
+                1.9,
+                0
+              ],
+              [
+                0.08,
+                0.1,
+                0
+              ]
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "thread",
+            "importance": "detail",
+            "moves": "sway",
+            "hue": 222,
+            "points": [
+              [
+                -4.6,
+                -0.72,
+                0
+              ],
+              [
+                -3.1,
+                -0.77,
+                0
+              ],
+              [
+                -1.5,
+                -0.72,
+                0
+              ],
+              [
+                0,
+                -0.77,
+                0
+              ],
+              [
+                1.5,
+                -0.72,
+                0
+              ],
+              [
+                3.1,
+                -0.77,
+                0
+              ],
+              [
+                4.6,
+                -0.72,
+                0
+              ]
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "accent",
+            "moves": "travel",
+            "hue": 62,
+            "along": 1,
+            "heading": 1,
+            "points": [
+              [
+                -3.75,
+                0.08,
+                0.05
+              ],
+              [
+                -3.3,
+                0.12,
+                0.05
+              ],
+              [
+                -2.85,
+                0.14,
+                0.05
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.03
+              },
+              {
+                "at": 0.85,
+                "r": 0.03
+              },
+              {
+                "at": 1,
+                "r": 0.018
+              }
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "accent",
+            "moves": "travel",
+            "hue": 352,
+            "along": 1,
+            "heading": -1,
+            "speed": 0.8,
+            "points": [
+              [
+                3.45,
+                0.1,
+                0.05
+              ],
+              [
+                3.05,
+                0.13,
+                0.05
+              ],
+              [
+                2.65,
+                0.15,
+                0.05
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.028
+              },
+              {
+                "at": 0.85,
+                "r": 0.028
+              },
+              {
+                "at": 1,
+                "r": 0.017
+              }
+            ]
+          },
+          {
+            "section": "thread",
+            "importance": "accent",
+            "hue": 88,
+            "points": [
+              [
+                -1.88,
+                2.17,
+                0
+              ],
+              [
+                -1.88,
+                2.3,
+                0
+              ]
+            ]
+          },
+          {
+            "section": "thread",
+            "importance": "accent",
+            "hue": 88,
+            "points": [
+              [
+                1.88,
+                2.17,
+                0
+              ],
+              [
+                1.88,
+                2.3,
+                0
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "p2",
+      "name": "Astrolabe",
+      "passage": "Astrolabe is a place to dream, connect and build. Danny and I make it so people can reach their goals with support, accountability and tools of their own. It keeps teaching me to empower myself and those around me, now that our dreams are more within reach than ever.",
+      "art": {
+        "seed": 96,
+        "span": 0.9,
+        "hue": 255,
+        "grain": "bold",
+        "depth": "volumetric",
+        "view": "free",
+        "white": true,
+        "footprint": 0.32,
+        "float": 0.005,
+        "motion": {
+          "kind": "orbit",
+          "tempo": "steady"
+        },
+        "strokes": [
+          {
+            "smooth": true,
+            "section": "shell",
+            "importance": "primary",
+            "moves": "still",
+            "hue": 250,
+            "dots": 90,
+            "loose": 0.6,
+            "lights": 0.5,
+            "points": [
+              [
+                0,
+                -0.32,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0.32,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.03
+              },
+              {
+                "at": 0.1,
+                "r": 0.27
+              },
+              {
+                "at": 0.2,
+                "r": 0.36
+              },
+              {
+                "at": 0.3,
+                "r": 0.412
+              },
+              {
+                "at": 0.4,
+                "r": 0.441
+              },
+              {
+                "at": 0.5,
+                "r": 0.45
+              },
+              {
+                "at": 0.6,
+                "r": 0.441
+              },
+              {
+                "at": 0.7,
+                "r": 0.412
+              },
+              {
+                "at": 0.8,
+                "r": 0.36
+              },
+              {
+                "at": 0.9,
+                "r": 0.27
+              },
+              {
+                "at": 1,
+                "r": 0.03
+              }
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "shell",
+            "importance": "secondary",
+            "moves": "still",
+            "hue": 228,
+            "dots": 24,
+            "loose": 1,
+            "lights": 0.5,
+            "points": [
+              [
+                0,
+                -0.18,
+                0
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0.18,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.03
+              },
+              {
+                "at": 0.17,
+                "r": 0.194
+              },
+              {
+                "at": 0.33,
+                "r": 0.245
+              },
+              {
+                "at": 0.5,
+                "r": 0.26
+              },
+              {
+                "at": 0.67,
+                "r": 0.245
+              },
+              {
+                "at": 0.83,
+                "r": 0.194
+              },
+              {
+                "at": 1,
+                "r": 0.03
+              }
+            ]
+          },
+          {
+            "section": "dot",
+            "importance": "accent",
+            "moves": "pulse",
+            "hue": 85,
+            "scale": 0.9,
+            "points": [
+              [
+                -0.14166,
+                0.145,
+                0.34
+              ],
+              [
+                -0.14166,
+                0.145,
+                0.36
+              ]
+            ]
+          },
+          {
+            "section": "dot",
+            "importance": "accent",
+            "moves": "pulse",
+            "hue": 85,
+            "scale": 0.9,
+            "points": [
+              [
+                0.14166,
+                0.145,
+                0.34
+              ],
+              [
+                0.14166,
+                0.145,
+                0.36
+              ]
+            ]
+          }
+        ]
+      },
+      "notes": [
+        {
+          "key": "n1",
+          "kind": "note",
+          "title": "A globe made of notes",
+          "body": "In a member's own brain every light on the globe is a note, placed by what it is about. Regions grow where the work piles up, and the busiest places glow brighter the more they are used.",
+          "links": [
+            "n2",
+            "n3",
+            "n12"
+          ]
+        },
+        {
+          "key": "n2",
+          "kind": "note",
+          "title": "Region art",
+          "body": "A region can get its own sculpture, drawn from lines and tuned until it reads at globe size.\n\n- planned from the region itself\n- scored and checked\n- judged by a separate reviewer before it goes up",
+          "links": [
+            "n1"
+          ]
+        },
+        {
+          "key": "n3",
+          "kind": "note",
+          "title": "The chat at the center",
+          "body": "You talk, and the brain keeps the useful parts. The globe lights up as notes are read and written, so you can **watch the work happen** instead of wondering what it did.",
+          "links": [
+            "n1",
+            "n4"
+          ]
+        },
+        {
+          "key": "n4",
+          "kind": "note",
+          "title": "Rituals you can press",
+          "body": "A way of working you repeat becomes a button: a **morning catch-up**, a *wind-down*, a Monday list. Each one waits for you, and nothing runs on its own.",
+          "links": [
+            "n3",
+            "n5"
+          ]
+        },
+        {
+          "key": "n5",
+          "kind": "note",
+          "title": "The seatbelt",
+          "body": "With the seatbelt on, it stops before anything sends, buys, deletes or publishes, and asks first. Taking it off is a choice the member makes in plain words.",
+          "links": [
+            "n4"
+          ]
+        },
+        {
+          "key": "n6",
+          "kind": "note",
+          "title": "Courses through a region",
+          "body": "Big builds are charted as a voyage of stops on the globe. A small sailboat shows which stop the work is on right now, and each stop links to its build tracker.",
+          "links": [
+            "n7",
+            "n9"
+          ]
+        },
+        {
+          "key": "n7",
+          "kind": "note",
+          "title": "Two chats, one build",
+          "body": "An orchestrator plans the next slice while a developer builds it, side by side. In *Speedboat* mode they hand the work back and forth on their own until the course is done or a real decision needs the member.",
+          "links": [
+            "n6",
+            "n8",
+            "n9"
+          ]
+        },
+        {
+          "key": "n8",
+          "kind": "note",
+          "title": "A control tower",
+          "body": "When several builds share one computer, heavy jobs wait their turn in a single lane, so the machine never chokes and nothing collides.",
+          "links": [
+            "n7"
+          ]
+        },
+        {
+          "key": "n9",
+          "kind": "note",
+          "title": "Handoffs that remember",
+          "body": "Every session ends with a closeout and a prompt for the next one, so a fresh chat picks up exactly where the last one stopped.",
+          "links": [
+            "n6",
+            "n7",
+            "n16"
+          ]
+        },
+        {
+          "key": "n10",
+          "kind": "note",
+          "title": "More than one engine",
+          "body": "It runs on Claude Code today, and the same brain is learning to work with other engines too, so the brain belongs to its member and not to any one tool.",
+          "links": [
+            "n3"
+          ]
+        },
+        {
+          "key": "n11",
+          "kind": "note",
+          "title": "A landing page that draws itself",
+          "body": "The public page was rebuilt pass after pass until a visitor could watch the product draw itself, one region at a time.",
+          "links": [
+            "n12"
+          ]
+        },
+        {
+          "key": "n12",
+          "kind": "note",
+          "title": "This world, shared",
+          "body": "The globe you are turning was published from a private brain. Only the words approved for it ever left the computer, and the lights are placed by a seed, not by the notes beneath.",
+          "links": [
+            "n1",
+            "n11"
+          ]
+        },
+        {
+          "key": "n13",
+          "kind": "note",
+          "title": "Built a slice at a time",
+          "body": "Most of it was built in long evening sessions, one slice at a time, each one shipped and looked at before the next began.",
+          "links": [
+            "n16"
+          ]
+        },
+        {
+          "key": "n14",
+          "kind": "insight",
+          "title": "Why I build it",
+          "body": "My own mind runs in many directions at once. Astrolabe is the place I wished I had: one world where ideas, people and work stay connected, and nothing has to be organized first.",
+          "links": [
+            "n15",
+            "n16"
+          ]
+        },
+        {
+          "key": "n15",
+          "kind": "insight",
+          "title": "What it keeps teaching me",
+          "body": "A good system meets you where you are and keeps up. Building this keeps reminding me how much more possible our dreams become with the right support around them.",
+          "links": [
+            "n14"
+          ]
+        },
+        {
+          "key": "n16",
+          "kind": "insight",
+          "title": "How I like to work",
+          "body": "Fast slices, a working thing on the screen by the end of the first sitting, then the next step designed from what I see. Astrolabe is built that way, and it helps its members **build that way too**.",
+          "links": [
+            "n9",
+            "n13",
+            "n14"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "p3",
+      "name": "Community",
+      "passage": "This is the circle around the work, where I teach others to build their own second brain and try new ideas on people I like before anyone else sees them.",
+      "art": {
+        "seed": 61,
+        "span": 0.9,
+        "depth": "shallow",
+        "view": "elevation",
+        "motion": {
+          "kind": "breathe",
+          "tempo": "lazy"
+        },
+        "strokes": [
+          {
+            "smooth": true,
+            "section": "tube",
+            "importance": "secondary",
+            "moves": "still",
+            "hue": 285,
+            "points": [
+              [
+                -0.7,
+                -0.88,
+                0
+              ],
+              [
+                -0.35,
+                -1.02,
+                0
+              ],
+              [
+                0.35,
+                -1.02,
+                0
+              ],
+              [
+                0.7,
+                -0.88,
+                0
+              ]
+            ],
+            "girth": 0.018
+          },
+          {
+            "smooth": true,
+            "section": "tube",
+            "importance": "primary",
+            "moves": "flicker",
+            "hue": 52,
+            "points": [
+              [
+                0,
+                -1,
+                0
+              ],
+              [
+                -0.05,
+                -0.4,
+                0
+              ],
+              [
+                0.04,
+                0.25,
+                0
+              ],
+              [
+                0,
+                0.95,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.05
+              },
+              {
+                "at": 0.3,
+                "r": 0.065
+              },
+              {
+                "at": 0.8,
+                "r": 0.025
+              },
+              {
+                "at": 1,
+                "r": 0.005
+              }
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "tube",
+            "importance": "primary",
+            "moves": "flicker",
+            "hue": 78,
+            "points": [
+              [
+                0.02,
+                -1,
+                0.02
+              ],
+              [
+                0.06,
+                -0.6,
+                0.02
+              ],
+              [
+                0,
+                -0.15,
+                0.02
+              ],
+              [
+                0.02,
+                0.35,
+                0.02
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.03
+              },
+              {
+                "at": 0.3,
+                "r": 0.04
+              },
+              {
+                "at": 1,
+                "r": 0.004
+              }
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "thread",
+            "importance": "secondary",
+            "hue": 285,
+            "points": [
+              [
+                -0.75,
+                -0.95,
+                0
+              ],
+              [
+                -1.5,
+                -0.86,
+                0.03
+              ],
+              [
+                -2.2,
+                -0.66,
+                0.03
+              ],
+              [
+                -2.7,
+                -0.45,
+                0
+              ]
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "thread",
+            "importance": "secondary",
+            "hue": 285,
+            "points": [
+              [
+                0.75,
+                -0.95,
+                0
+              ],
+              [
+                1.5,
+                -0.88,
+                -0.03
+              ],
+              [
+                2.3,
+                -0.68,
+                -0.03
+              ],
+              [
+                2.9,
+                -0.45,
+                0
+              ]
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "primary",
+            "moves": "travel",
+            "hue": 220,
+            "along": 4,
+            "heading": 1,
+            "speed": 0.6,
+            "points": [
+              [
+                -1.85,
+                -0.8,
+                0.03
+              ],
+              [
+                -1.866,
+                -0.38000000000000006,
+                0.03
+              ],
+              [
+                -1.8820000000000001,
+                -0.020000000000000018,
+                0.03
+              ],
+              [
+                -1.8980000000000001,
+                0.07999999999999996,
+                0.03
+              ],
+              [
+                -1.9140000000000001,
+                0.21999999999999997,
+                0.03
+              ],
+              [
+                -1.9300000000000002,
+                0.30000000000000004,
+                0.03
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.007
+              },
+              {
+                "at": 0.36,
+                "r": 0.012
+              },
+              {
+                "at": 0.62,
+                "r": 0.02
+              },
+              {
+                "at": 0.74,
+                "r": 0.004
+              },
+              {
+                "at": 0.8,
+                "r": 0.004
+              },
+              {
+                "at": 0.9,
+                "r": 0.022
+              },
+              {
+                "at": 1,
+                "r": 0.006
+              }
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "accent",
+            "moves": "carried",
+            "hue": 100,
+            "by": 6,
+            "soft": true,
+            "points": [
+              [
+                -2.12,
+                -0.36,
+                0.03
+              ],
+              [
+                -2.12,
+                -0.45999999999999996,
+                0.03
+              ],
+              [
+                -2.12,
+                -0.56,
+                0.03
+              ],
+              [
+                -2.12,
+                -0.64,
+                0.03
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.003
+              },
+              {
+                "at": 0.3,
+                "r": 0.003
+              },
+              {
+                "at": 0.42,
+                "r": 0.022
+              },
+              {
+                "at": 0.9,
+                "r": 0.022
+              },
+              {
+                "at": 1,
+                "r": 0.01
+              }
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "primary",
+            "moves": "travel",
+            "hue": 220,
+            "along": 5,
+            "heading": 1,
+            "speed": 0.5,
+            "points": [
+              [
+                2.35,
+                -0.66,
+                -0.03
+              ],
+              [
+                2.366,
+                -0.24000000000000005,
+                -0.03
+              ],
+              [
+                2.382,
+                0.12,
+                -0.03
+              ],
+              [
+                2.398,
+                0.21999999999999997,
+                -0.03
+              ],
+              [
+                2.414,
+                0.36,
+                -0.03
+              ],
+              [
+                2.43,
+                0.44000000000000006,
+                -0.03
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.007
+              },
+              {
+                "at": 0.36,
+                "r": 0.012
+              },
+              {
+                "at": 0.62,
+                "r": 0.02
+              },
+              {
+                "at": 0.74,
+                "r": 0.004
+              },
+              {
+                "at": 0.8,
+                "r": 0.004
+              },
+              {
+                "at": 0.9,
+                "r": 0.022
+              },
+              {
+                "at": 1,
+                "r": 0.006
+              }
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "accent",
+            "moves": "carried",
+            "hue": 100,
+            "by": 8,
+            "soft": true,
+            "points": [
+              [
+                2.62,
+                -0.22,
+                -0.03
+              ],
+              [
+                2.62,
+                -0.32,
+                -0.03
+              ],
+              [
+                2.62,
+                -0.42000000000000004,
+                -0.03
+              ],
+              [
+                2.62,
+                -0.5,
+                -0.03
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.003
+              },
+              {
+                "at": 0.3,
+                "r": 0.003
+              },
+              {
+                "at": 0.42,
+                "r": 0.022
+              },
+              {
+                "at": 0.9,
+                "r": 0.022
+              },
+              {
+                "at": 1,
+                "r": 0.01
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "p4",
+      "name": "The Book",
+      "passage": "Ursina and I co-wrote Art & Mind, a book about making decisions, out since May 2026. Anyone reading our book can model their important life choices in Decision Art, our app, and come to clarity. Our learning platform is also in use at two universities.",
+      "art": {
+        "seed": 517,
+        "span": 0.9,
+        "hue": 30,
+        "depth": "shallow",
+        "view": "elevation",
+        "motion": {
+          "kind": "breathe",
+          "tempo": "lazy"
+        },
+        "strokes": [
+          {
+            "smooth": true,
+            "section": "tube",
+            "importance": "primary",
+            "moves": "hinge",
+            "hue": 30,
+            "points": [
+              [
+                -2.2,
+                2.54,
+                0
+              ],
+              [
+                -1.9,
+                2.19,
+                0
+              ],
+              [
+                -1.63,
+                1.86,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.012
+              },
+              {
+                "at": 1,
+                "r": 0.016
+              }
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "secondary",
+            "moves": "hinge",
+            "hue": 90,
+            "points": [
+              [
+                -1.63,
+                1.86,
+                0
+              ],
+              [
+                -1.49,
+                1.68,
+                0
+              ]
+            ],
+            "girth": 0.022
+          },
+          {
+            "smooth": true,
+            "section": "tube",
+            "importance": "primary",
+            "moves": "sway",
+            "hue": 330,
+            "points": [
+              [
+                -1.49,
+                1.68,
+                0
+              ],
+              [
+                -1.39,
+                1.54,
+                0
+              ],
+              [
+                -1.25,
+                1.34,
+                0
+              ],
+              [
+                -1.11,
+                1.12,
+                0
+              ],
+              [
+                -0.97,
+                0.88,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.028
+              },
+              {
+                "at": 0.22,
+                "r": 0.036
+              },
+              {
+                "at": 0.55,
+                "r": 0.022
+              },
+              {
+                "at": 0.85,
+                "r": 0.009
+              },
+              {
+                "at": 1,
+                "r": 0.002
+              }
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "blade",
+            "importance": "primary",
+            "moves": "still",
+            "hue": 330,
+            "points": [
+              [
+                -1.2,
+                0.34,
+                0
+              ],
+              [
+                -0.75,
+                0.2,
+                0
+              ],
+              [
+                -0.1,
+                0.2,
+                0
+              ],
+              [
+                0.45,
+                0.32,
+                0
+              ],
+              [
+                0.7,
+                0.38,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.03
+              },
+              {
+                "at": 0.1,
+                "r": 0.046
+              },
+              {
+                "at": 0.3,
+                "r": 0.036
+              },
+              {
+                "at": 0.7,
+                "r": 0.018
+              },
+              {
+                "at": 1,
+                "r": 0.011
+              }
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "blade",
+            "importance": "secondary",
+            "moves": "still",
+            "hue": 210,
+            "points": [
+              [
+                0.7,
+                0.42,
+                0
+              ],
+              [
+                1.25,
+                0.85,
+                0
+              ],
+              [
+                1.8,
+                1.25,
+                0
+              ],
+              [
+                2.25,
+                1.45,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.02
+              },
+              {
+                "at": 0.6,
+                "r": 0.014
+              },
+              {
+                "at": 1,
+                "r": 0.004
+              }
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "blade",
+            "importance": "secondary",
+            "moves": "still",
+            "hue": 210,
+            "points": [
+              [
+                0.7,
+                0.37,
+                0
+              ],
+              [
+                1.4,
+                0.28,
+                0
+              ],
+              [
+                2,
+                0.38,
+                0
+              ],
+              [
+                2.5,
+                0.48,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.02
+              },
+              {
+                "at": 0.6,
+                "r": 0.014
+              },
+              {
+                "at": 1,
+                "r": 0.004
+              }
+            ]
+          },
+          {
+            "smooth": true,
+            "section": "blade",
+            "importance": "secondary",
+            "moves": "still",
+            "hue": 210,
+            "points": [
+              [
+                0.7,
+                0.32,
+                0
+              ],
+              [
+                1.2,
+                -0.05,
+                0
+              ],
+              [
+                1.75,
+                -0.3,
+                0
+              ],
+              [
+                2.2,
+                -0.35,
+                0
+              ]
+            ],
+            "girth": [
+              {
+                "at": 0,
+                "r": 0.02
+              },
+              {
+                "at": 0.6,
+                "r": 0.014
+              },
+              {
+                "at": 1,
+                "r": 0.004
+              }
+            ]
+          },
+          {
+            "section": "tube",
+            "importance": "accent",
+            "moves": "pulse",
+            "hue": 90,
+            "points": [
+              [
+                2.3,
+                1.47,
+                0.02
+              ],
+              [
+                2.42,
+                1.5,
+                0.02
+              ]
+            ],
+            "girth": 0.02
+          },
+          {
+            "section": "tube",
+            "importance": "accent",
+            "moves": "pulse",
+            "hue": 90,
+            "points": [
+              [
+                2.56,
+                0.49,
+                0.02
+              ],
+              [
+                2.68,
+                0.5,
+                0.02
+              ]
+            ],
+            "girth": 0.02
+          },
+          {
+            "section": "tube",
+            "importance": "accent",
+            "moves": "pulse",
+            "hue": 90,
+            "points": [
+              [
+                2.26,
+                -0.35,
+                0.02
+              ],
+              [
+                2.38,
+                -0.34,
+                0.02
+              ]
+            ],
+            "girth": 0.02
+          }
+        ]
+      }
+    },
+    {
+      "key": "p5",
+      "name": "Side Projects",
+      "passage": "The small ideas that wouldn't leave me alone. Some get a weekend, some get a name, and a few turn into something I use every day.",
+      "art": null
+    },
+    {
+      "key": "p6",
+      "name": "Life",
+      "passage": "Everything that isn't work, kept close. It's the reason the rest of this map exists.",
+      "art": null
+    }
+  ],
+  "tour": [
+    "p6",
+    "p1",
+    "p4",
+    "p2",
+    "p3"
+  ],
+  "opening": "p6",
+  "made": "2026-10"
+}
